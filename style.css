@@ -1,0 +1,383 @@
+/* CSS:BASE-START */
+:root {
+    --bg: #071029;
+    /* 深藍背景 */
+    --card: #0f2333;
+    /* 深卡片色 */
+    --accent: #1ea7b8;
+    /* 青綠主色 */
+    --muted: #9aa6b2;
+    /* 次要文字 */
+    --text: #e6eef3;
+    /* 主要文字 */
+    --max-width: 1100px;
+    --gap: 1rem;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: linear-gradient(180deg, var(--bg), #02101a 120%);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+}
+
+.page {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--max-width);
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+/* utility */
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.row-center {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* small subtle card background for sections */
+.section {
+    padding: 2rem 0;
+}
+
+.section .container .card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.03));
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+/* CSS:BASE-END */
+
+/* CSS:HERO-START */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(6px);
+    background: linear-gradient(180deg, rgba(7, 16, 41, 0.88), rgba(7, 16, 41, 0.76));
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+}
+
+.brand {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: var(--text);
+    display: inline-block;
+}
+
+.brand .dot {
+    color: var(--accent);
+    margin: 0 0.35rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    padding: 0.35rem 0.6rem;
+    border-radius: 8px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Hero */
+.section-hero {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.hero-left {
+    order: 1;
+}
+
+.hero-right {
+    order: 2;
+    display: block;
+}
+
+.hero-title {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.4rem;
+    line-height: 1.05;
+    letter-spacing: 0.2px;
+    color: var(--text);
+}
+
+.hero-sub {
+    margin: 0 0 0.75rem 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.hero-cta {
+    display: inline-block;
+    padding: 0.5rem 0.85rem;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--accent), #1bb0c0);
+    color: #041219;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-decoration: none;
+}
+
+.hero-note {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), transparent);
+    padding: 0.6rem;
+    border-radius: 8px;
+}
+
+.hero-image-wrapper {
+    margin-top: 0.75rem;
+    max-width: 420px;
+    align-self: center;
+}
+
+/* CSS:HERO-END */
+
+/* CSS:ABOUT-START */
+.section-about .section-title,
+.section-skills .section-title,
+.section-projects .section-title,
+.section-contact .section-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: var(--text);
+    letter-spacing: 0.2px;
+}
+
+.section-about p,
+.section-skills p,
+.section-projects p,
+.section-contact p {
+    color: var(--muted);
+    margin: 0 0 0.75rem 0;
+}
+
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.about-profile {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.profile-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.meta-role {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* CSS:ABOUT-END */
+
+/* CSS:SKILLS-START */
+.skill-list {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.skill-pill {
+    padding: 0.4rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* CSS:SKILLS-END */
+
+/* CSS:PROJECTS-START */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.project-card {
+    display: block;
+    padding: 0.8rem;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(0, 0, 0, 0.02));
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.project-title {
+    font-weight: 600;
+    margin: 0 0 0.35rem 0;
+}
+
+.project-desc {
+    color: var(--muted);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* CSS:PROJECTS-END */
+
+/* CSS:CONTACT-START */
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-item {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    color: var(--muted);
+}
+
+.contact-link {
+    color: var(--accent);
+    word-break: break-all;
+}
+
+/* CSS:CONTACT-END */
+
+/* CSS:RWD-START */
+/* mobile-first; 在寬螢幕做雙欄或格線排版 */
+@media (min-width: 480px) {
+    .hero-title {
+        font-size: 1.6rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-grid {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .hero-left {
+        flex: 1;
+    }
+
+    .hero-right {
+        flex: 0 0 420px;
+    }
+
+    .about-grid {
+        flex-direction: row;
+        gap: 1.25rem;
+        align-items: flex-start;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* CSS:RWD-END */
+
+/* final safety: ensure no horizontal scroll */
+html,
+body {
+    overflow-x: hidden;
+}
